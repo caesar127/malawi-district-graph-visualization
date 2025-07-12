@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Malawi District Graph Layout</title>
+
+  <!-- D3.js v7 for DOM binding and SVG manipulation -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,27 +52,34 @@
       font-size: 10px;
       fill: #333;
       text-anchor: middle;
-      pointer-events: none;
+      pointer-events: none; /* Prevent text from intercepting mouse events */
     }
   </style>
 </head>
+
 <body>
   <h2>Malawi District Graph Layout</h2>
+
+  <!-- Graph container with centered SVG -->
   <div id="graph-container">
     <svg id="graph" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"></svg>
   </div>
 
   <script>
     const width = 600;
-    const height = 600;
+    const height = 520;
     const svg = d3.select("#graph");
 
+    // Load layout data from output.json (expected to contain normalized x, y positions)
     d3.json("./output.json").then(data => {
+      // Scaling from normalized [0–1] space to pixel dimensions with padding
       const scaleX = d3.scaleLinear().domain([0, 1]).range([50, width - 50]);
       const scaleY = d3.scaleLinear().domain([0, 1]).range([50, height - 50]);
 
+      // Index nodes by ID for fast edge lookup
       const nodeById = Object.fromEntries(data.nodes.map(n => [n.id, n]));
 
+      // Draw edges (lines) between node pairs
       svg.selectAll(".link")
         .data(data.edges)
         .enter()
@@ -80,6 +90,7 @@
         .attr("x2", d => scaleX(nodeById[d[1]].x))
         .attr("y2", d => scaleY(nodeById[d[1]].y));
 
+      // Draw nodes as circles
       svg.selectAll(".node")
         .data(data.nodes)
         .enter()
@@ -89,6 +100,7 @@
         .attr("cx", d => scaleX(d.x))
         .attr("cy", d => scaleY(d.y));
 
+      // Render node labels above each node
       svg.selectAll(".label")
         .data(data.nodes)
         .enter()
@@ -98,6 +110,7 @@
         .attr("y", d => scaleY(d.y) - 10)
         .text(d => d.id);
     }).catch(err => {
+      // Graceful error handling for missing/invalid JSON
       console.error("Failed to load graph:", err);
     });
   </script>
