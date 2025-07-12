@@ -101,3 +101,4 @@ const outputPath = path.join(__dirname, "output.json");
 fs.writeFileSync(outputPath, JSON.stringify(layout, null, 2));
 
 console.log("Layout generated and saved to output.json");
+console.log("Computed layout:", layout);
