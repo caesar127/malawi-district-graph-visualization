@@ -36,3 +36,8 @@ malawi-district-graph-visualization/
 └── README.md # You are here
 
 ---
+## React Graph Screenshot
+![Graph Screenshot](./assets/screenshot.png)
+
+## HTML Graph Screenshot
+![Graph Screenshot](./assets/screenshot.png)
