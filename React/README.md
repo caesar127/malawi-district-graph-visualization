@@ -26,9 +26,6 @@ malawi-district-graph-visualization/React
 ├── package.json
 └── vite.config.js
 
-yaml
-
-
 ---
 
 ## ✅ Requirements

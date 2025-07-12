@@ -15,8 +15,6 @@ project-folder/
 ├── index.html # D3 visualization of the output graph
 └── README.md # You are here
 
-yaml
-
 
 ---
 
