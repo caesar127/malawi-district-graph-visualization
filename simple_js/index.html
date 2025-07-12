@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malawi District Graph Layout</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 20px 0;
+      color: #2c3e50;
+    }
+
+    #graph-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 80px);
+      padding: 10px;
+    }
+
+    svg {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      width: 900px;
+      height: 600px;
+    }
+
+    .link {
+      stroke: #ccc;
+      stroke-width: 1.5px;
+    }
+
+    .node {
+      fill: #3498db;
+      stroke: white;
+      stroke-width: 1.5px;
+    }
+
+    .label {
+      font-size: 10px;
+      fill: #333;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Malawi District Graph Layout</h2>
+  <div id="graph-container">
+    <svg id="graph" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"></svg>
+  </div>
+
+  <script>
+    const width = 600;
+    const height = 600;
+    const svg = d3.select("#graph");
+
+    d3.json("./output.json").then(data => {
+      const scaleX = d3.scaleLinear().domain([0, 1]).range([50, width - 50]);
+      const scaleY = d3.scaleLinear().domain([0, 1]).range([50, height - 50]);
+
+      const nodeById = Object.fromEntries(data.nodes.map(n => [n.id, n]));
+
+      svg.selectAll(".link")
+        .data(data.edges)
+        .enter()
+        .append("line")
+        .attr("class", "link")
+        .attr("x1", d => scaleX(nodeById[d[0]].x))
+        .attr("y1", d => scaleY(nodeById[d[0]].y))
+        .attr("x2", d => scaleX(nodeById[d[1]].x))
+        .attr("y2", d => scaleY(nodeById[d[1]].y));
+
+      svg.selectAll(".node")
+        .data(data.nodes)
+        .enter()
+        .append("circle")
+        .attr("class", "node")
+        .attr("r", 5)
+        .attr("cx", d => scaleX(d.x))
+        .attr("cy", d => scaleY(d.y));
+
+      svg.selectAll(".label")
+        .data(data.nodes)
+        .enter()
+        .append("text")
+        .attr("class", "label")
+        .attr("x", d => scaleX(d.x))
+        .attr("y", d => scaleY(d.y) - 10)
+        .text(d => d.id);
+    }).catch(err => {
+      console.error("Failed to load graph:", err);
+    });
+  </script>
+</body>
+</html>

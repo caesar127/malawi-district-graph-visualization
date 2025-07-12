@@ -1,0 +1,282 @@
+{
+  "nodes": [
+    {
+      "id": "Blantyre",
+      "x": 1,
+      "y": 0.6482364668189213
+    },
+    {
+      "id": "Chikwawa",
+      "x": 0.7460317974000459,
+      "y": 0.9686411807688016
+    },
+    {
+      "id": "Chiradzulu",
+      "x": 1,
+      "y": 0.7555524382211829
+    },
+    {
+      "id": "Chitipa",
+      "x": 0.069354123185763,
+      "y": 1
+    },
+    {
+      "id": "Dedza",
+      "x": 0.1621650731063536,
+      "y": 0
+    },
+    {
+      "id": "Dowa",
+      "x": 0,
+      "y": 0.47200722775573983
+    },
+    {
+      "id": "Karonga",
+      "x": 0,
+      "y": 0.7780162426837895
+    },
+    {
+      "id": "Kasungu",
+      "x": 0.22181118843113762,
+      "y": 0
+    },
+    {
+      "id": "Lilongwe",
+      "x": 0.14242038079932345,
+      "y": 0.16538352846541568
+    },
+    {
+      "id": "Machinga",
+      "x": 1,
+      "y": 0.11282073395978831
+    },
+    {
+      "id": "Mangochi",
+      "x": 0.667269767307397,
+      "y": 0
+    },
+    {
+      "id": "Mchinji",
+      "x": 0.36701532978914525,
+      "y": 0
+    },
+    {
+      "id": "Mulanje",
+      "x": 1,
+      "y": 1
+    },
+    {
+      "id": "Mwanza",
+      "x": 0.879433821463176,
+      "y": 1
+    },
+    {
+      "id": "Mzimba",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": "Neno",
+      "x": 1,
+      "y": 0.7105615764306402
+    },
+    {
+      "id": "Nkhata Bay",
+      "x": 0,
+      "y": 0.06113042554611509
+    },
+    {
+      "id": "Nkhotakota",
+      "x": 0.01254831538940675,
+      "y": 0.2579748040941285
+    },
+    {
+      "id": "Nsanje",
+      "x": 0.5658082440029892,
+      "y": 1
+    },
+    {
+      "id": "Ntcheu",
+      "x": 0.5458481863150223,
+      "y": 0
+    },
+    {
+      "id": "Ntchisi",
+      "x": 0,
+      "y": 0.5875095227689443
+    },
+    {
+      "id": "Phalombe",
+      "x": 1,
+      "y": 0.9621344275794352
+    },
+    {
+      "id": "Rumphi",
+      "x": 0,
+      "y": 0.38637587716226396
+    },
+    {
+      "id": "Salima",
+      "x": 0.3038958525415257,
+      "y": 0.1751345796006657
+    },
+    {
+      "id": "Thyolo",
+      "x": 1,
+      "y": 0.8741540109856668
+    },
+    {
+      "id": "Zomba",
+      "x": 1,
+      "y": 0.34977092975875135
+    },
+    {
+      "id": "Balaka",
+      "x": 0.8637074922449302,
+      "y": 0
+    },
+    {
+      "id": "Likoma",
+      "x": 0,
+      "y": 1
+    }
+  ],
+  "edges": [
+    [
+      "Blantyre",
+      "Chikwawa"
+    ],
+    [
+      "Blantyre",
+      "Chiradzulu"
+    ],
+    [
+      "Blantyre",
+      "Thyolo"
+    ],
+    [
+      "Chikwawa",
+      "Nsanje"
+    ],
+    [
+      "Chikwawa",
+      "Mwanza"
+    ],
+    [
+      "Chiradzulu",
+      "Zomba"
+    ],
+    [
+      "Chiradzulu",
+      "Phalombe"
+    ],
+    [
+      "Chitipa",
+      "Karonga"
+    ],
+    [
+      "Dedza",
+      "Lilongwe"
+    ],
+    [
+      "Dedza",
+      "Ntcheu"
+    ],
+    [
+      "Dowa",
+      "Lilongwe"
+    ],
+    [
+      "Dowa",
+      "Ntchisi"
+    ],
+    [
+      "Karonga",
+      "Rumphi"
+    ],
+    [
+      "Kasungu",
+      "Lilongwe"
+    ],
+    [
+      "Kasungu",
+      "Mzimba"
+    ],
+    [
+      "Lilongwe",
+      "Mchinji"
+    ],
+    [
+      "Lilongwe",
+      "Salima"
+    ],
+    [
+      "Machinga",
+      "Zomba"
+    ],
+    [
+      "Machinga",
+      "Balaka"
+    ],
+    [
+      "Mangochi",
+      "Balaka"
+    ],
+    [
+      "Mangochi",
+      "Salima"
+    ],
+    [
+      "Mulanje",
+      "Phalombe"
+    ],
+    [
+      "Mulanje",
+      "Thyolo"
+    ],
+    [
+      "Mwanza",
+      "Neno"
+    ],
+    [
+      "Mzimba",
+      "Nkhata Bay"
+    ],
+    [
+      "Mzimba",
+      "Rumphi"
+    ],
+    [
+      "Nkhata Bay",
+      "Nkhotakota"
+    ],
+    [
+      "Nkhotakota",
+      "Salima"
+    ],
+    [
+      "Nsanje",
+      "Chikwawa"
+    ],
+    [
+      "Ntcheu",
+      "Balaka"
+    ],
+    [
+      "Ntchisi",
+      "Nkhotakota"
+    ],
+    [
+      "Phalombe",
+      "Mulanje"
+    ],
+    [
+      "Salima",
+      "Nkhotakota"
+    ],
+    [
+      "Zomba",
+      "Machinga"
+    ]
+  ]
+}
